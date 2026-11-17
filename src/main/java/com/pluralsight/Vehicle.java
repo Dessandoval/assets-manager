@@ -9,6 +9,7 @@ public class Vehicle extends Asset {
     private int year;
     private int odometer;
 
+
     public Vehicle(String description, String dateAcquired, BigDecimal originalCost, String makeModel, int year, int odometer) {
         super(description, dateAcquired, originalCost);
         this.makeModel = makeModel;
@@ -46,16 +47,16 @@ public class Vehicle extends Asset {
         BigDecimal value;
 
         if(vehicleAge <= 3){
-            value = getOriginalCost().multiply(new BigDecimal(1 - (vehicleAge * .03)));
+            value = getOriginalCost().multiply(BigDecimal.valueOf(1 - (vehicleAge * .03)));
         }
         else if(vehicleAge <= 6){
-            value = getOriginalCost().multiply(new BigDecimal(1 - (vehicleAge * .06)));
+            value = getOriginalCost().multiply(BigDecimal.valueOf(1 - (vehicleAge * .06)));
         }
         else if(vehicleAge <= 10){
-            value = getOriginalCost().multiply(new BigDecimal(1 - (vehicleAge * .08)));
+            value = getOriginalCost().multiply(BigDecimal.valueOf(1 - (vehicleAge * .08)));
         }
         else{
-            value = new BigDecimal(1000);
+            value = BigDecimal.valueOf(1000);
         }
         if(this.odometer > 100000){
             value = value.multiply(BigDecimal.valueOf(1 - 0.25));
