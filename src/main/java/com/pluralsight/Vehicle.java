@@ -1,6 +1,7 @@
 package com.pluralsight;
 
 import java.math.BigDecimal;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 public class Vehicle extends Asset {
@@ -42,24 +43,23 @@ public class Vehicle extends Asset {
     }
     @Override
     public BigDecimal getValue(){
-        LocalDateTime localDateTime = LocalDateTime.now();
-        int vehicleAge = localDateTime.getYear() - this.year;
+        int vehicleAge = java.time.LocalDate.now().getYear() - this.year;
         BigDecimal value;
 
         if(vehicleAge <= 3){
-            value = getOriginalCost().multiply(BigDecimal.valueOf(1 - (vehicleAge * .03)));
+            value = getOriginalCost().multiply(new BigDecimal(1 - (vehicleAge * .03)));
         }
         else if(vehicleAge <= 6){
-            value = getOriginalCost().multiply(BigDecimal.valueOf(1 - (vehicleAge * .06)));
+            value = getOriginalCost().multiply(new BigDecimal(1 - (vehicleAge * .06)));
         }
         else if(vehicleAge <= 10){
-            value = getOriginalCost().multiply(BigDecimal.valueOf(1 - (vehicleAge * .08)));
+            value = getOriginalCost().multiply(new BigDecimal(1 - (vehicleAge * .08)));
         }
         else{
-            value = BigDecimal.valueOf(1000);
+            value = new BigDecimal("1000");
         }
-        if(this.odometer > 100000){
-            value = value.multiply(BigDecimal.valueOf(1 - 0.25));
+        if (odometer > 100000 && !makeModel.toLowerCase().contains("honda") && !makeModel.toLowerCase().contains("toyota")) {
+            value = value.multiply(new BigDecimal("0.75"));
         }
         return value;
     }
