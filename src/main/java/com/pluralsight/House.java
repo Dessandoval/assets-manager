@@ -72,6 +72,7 @@ public class House extends Asset {
             }
             default -> new BigDecimal("0.00");
         };
+
         lotValue = new BigDecimal(lotSize).multiply(new BigDecimal("0.25"));
         return value.add(lotValue);
     }

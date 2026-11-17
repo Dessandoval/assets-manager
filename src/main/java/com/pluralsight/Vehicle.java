@@ -1,6 +1,7 @@
 package com.pluralsight;
 
 import java.math.BigDecimal;
+import java.time.LocalDateTime;
 
 public class Vehicle extends Asset {
 
@@ -37,5 +38,28 @@ public class Vehicle extends Asset {
 
     public void setOdometer(int odometer) {
         this.odometer = odometer;
+    }
+    @Override
+    public BigDecimal getValue(){
+        LocalDateTime localDateTime = LocalDateTime.now();
+        int vehicleAge = localDateTime.getYear() - this.year;
+        BigDecimal value;
+
+        if(vehicleAge <= 3){
+            value = getOriginalCost().multiply(BigDecimal.valueOf(1 - (vehicleAge * .03)));
+        }
+        else if(vehicleAge <= 6){
+            value = getOriginalCost().multiply(BigDecimal.valueOf(1 - (vehicleAge * .06)));
+        }
+        else if(vehicleAge <= 10){
+            value = getOriginalCost().multiply(BigDecimal.valueOf(1 - (vehicleAge * .09)));
+        }
+        else{
+            value = BigDecimal.valueOf(1000);
+        }
+        if(this.odometer > 100000){
+            value = value.multiply(BigDecimal.valueOf(1 - 0.25));
+        }
+        return value;
     }
 }
