@@ -50,6 +50,7 @@ public class House extends Asset {
     @Override
     public BigDecimal getValue(){
         BigDecimal pricePerSquareFoot;
+        BigDecimal lotValue;
 
 
         BigDecimal value = switch (condition) {
@@ -71,7 +72,7 @@ public class House extends Asset {
             }
             default -> new BigDecimal("0.00");
         };
-
-        return value;
+        lotValue = new BigDecimal(lotSize).multiply(new BigDecimal("0.25"));
+        return value.add(lotValue);
     }
 }
