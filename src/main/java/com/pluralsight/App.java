@@ -5,6 +5,8 @@ import java.util.ArrayList;
 
 public class App {
     public static void main(String[] args) {
+        //Abstract
+
         ArrayList<Asset> assets = new ArrayList<>();
 
         House house1 = new House("House", "2018", new BigDecimal("235500"), "lady lane", 2, 1800, 6000 );
