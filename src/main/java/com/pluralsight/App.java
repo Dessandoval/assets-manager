@@ -20,9 +20,11 @@ public class App {
         assets.add(new House("House", "2023-09-24", new BigDecimal("500000.00"), "45 Yes Lane", 3, 8000, 9000));
         assets.add(new Vehicle("my car", "2020-05-11", new BigDecimal("300000"), "GMC Sierra", 2018, 15000));
         assets.add(new Vehicle("Tom's truck", "2023-02-02", new BigDecimal("60000"), "Ram", 2016, 20000));
+        assets.add(new Cash("Clothes", "2026-11-18", new BigDecimal("20.20"), new BigDecimal("50.00")));
 
         for (Asset asset : assets) {
             System.out.println("Description: " + asset.getDescription());
+            System.out.println("Original Cost: " + asset.getOriginalCost());
 
             if (asset instanceof House house) {
                 System.out.println("Address: " + house.getAddress());
