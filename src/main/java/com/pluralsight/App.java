@@ -21,6 +21,9 @@ public class App {
 
         for (Asset asset : assets) {
             System.out.println("Description: " + asset.getDescription());
+            System.out.println("Date Acquired: " + asset.getDateAcquired());
+            System.out.println("Original Cost: " + asset.getOriginalCost());
+            System.out.println("Value: " + asset.getValue());
 
             if (asset instanceof House house) {
                 System.out.println("Address: " + house.getAddress());
