@@ -28,6 +28,8 @@ public class App {
                 System.out.println("Address: " + house.getAddress());
             } else if (asset instanceof Vehicle vehicle) {
                 System.out.println("Year & Model: " + vehicle.getYear() + " " + vehicle.getMakeModel());
+            } else if (asset instanceof Cash cash) {
+                System.out.println("Spent on: " + cash.getDescription() + " " + cash.getValue());
             }
         }
     }
