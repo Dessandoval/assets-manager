@@ -23,8 +23,6 @@ public class App {
         assets.add(new Cash("Clothes", "2026-11-18", new BigDecimal("20.20"), new BigDecimal("50.00")));
 
         for (Asset asset : assets) {
-            System.out.println("Description: " + asset.getDescription());
-            System.out.println("Original Cost: " + asset.getOriginalCost());
 
             if (asset instanceof House house) {
                 System.out.println("Address: " + house.getAddress());
