@@ -1,33 +1,7 @@
-# [Project Name]
+# p.55 question 
+what went wrong when adding my cash class, the complier was throwing a error
+asset is abstract and could not be instantiated, my options were add a matching constructor that calls super to pass,
+inherited fields to my asset class. or a default constructor. I chose the super constructor
+beause it initalized upon creating and enforcing the cash value.
 
-A Java application to track and value a personal portfolio of financial assets.
 
-## Features
-
-- the user can manage assest they have
-- Class Structure
-- 
-
-## How to run it
-
-1. Clone the repository and open it in IntelliJ
-2. Run `[App].java`
-3. [What to type first]
-
-## Screenshots
-
-![The home screen](images/home-screen.png)
-
-![Another screen](images/[another-screen].png)
-
-## Interesting code
-
-[One piece of code you're proud of, and a sentence about why.]
-
-```java
-[your code here]
-```
-
-## Author
-
-[Your name], Year Up Java Academy
