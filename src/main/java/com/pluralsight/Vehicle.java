@@ -45,13 +45,13 @@ public class Vehicle extends Asset {
         BigDecimal value;
 
         if(vehicleAge <= 3){
-            value = getOriginalCost().multiply(new BigDecimal(1 - (vehicleAge * .03)));
+            value = getOriginalCost().multiply(BigDecimal.ONE.subtract(new BigDecimal("0.03").multiply(new BigDecimal(vehicleAge))));
         }
         else if(vehicleAge <= 6){
-            value = getOriginalCost().multiply(new BigDecimal(1 - (vehicleAge * .06)));
+            value = getOriginalCost().multiply(BigDecimal.ONE.subtract(new BigDecimal("0.06").multiply(new BigDecimal(vehicleAge))));
         }
         else if(vehicleAge <= 10){
-            value = getOriginalCost().multiply(new BigDecimal(1 - (vehicleAge * .08)));
+            value = getOriginalCost().multiply(BigDecimal.ONE.subtract(new BigDecimal("0.08").multiply(new BigDecimal(vehicleAge))));
         }
         else{
             value = new BigDecimal("1000");
