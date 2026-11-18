@@ -29,7 +29,7 @@ public class App {
             } else if (asset instanceof Vehicle vehicle) {
                 System.out.println("Year & Model: " + vehicle.getYear() + " " + vehicle.getMakeModel());
             } else if (asset instanceof Cash cash) {
-                System.out.printf("Spent on: %s $%s%n", cash.getDescription(), cash.getValue());
+                System.out.printf("Cash under the mattress: %s $%s%n", cash.getDescription(), cash.getValue());
             }
         }
     }
